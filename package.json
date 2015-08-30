@@ -1,0 +1,22 @@
+{
+  "name": "iso-canvas",
+  "version": "0.1.0",
+  "description": "Canvas API wrapper for isomorphic applications.",
+  "main": "./src/canvas.node.js",
+  "browser": "./src/canvas.browser.js",
+  "dependencies": {
+    "canvas": "1.2.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "isomorphic",
+    "browser",
+    "node.js",
+    "canvas"
+  ],
+  "author": "Alexander Rusakov <a_s_rusakov@mail.ru>",
+  "license": "MIT"
+}
