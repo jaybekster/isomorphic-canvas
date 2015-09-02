@@ -1,15 +1,31 @@
 {
-  "name": "iso-canvas",
+  "name": "isomorphic-canvas",
   "version": "0.1.0",
   "description": "Canvas API wrapper for isomorphic applications.",
   "main": "./src/canvas.node.js",
   "browser": "./src/canvas.browser.js",
-  "dependencies": {
-    "canvas": "1.2.8"
+  "peerDependencies": {
+    "canvas": "^1.2.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.3.19",
+    "jasmine": "^2.3.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.5.1",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "mocha": "^2.3.0",
+    "phantomjs": "^1.9.18"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start",
+    "test_chrome": "karma start --browsers Chrome --no-single-run",
+    "test_node": "mocha tests/canvas.node.spec.js",
+    "coverage_browser": "karma start --reporters dots,coverage",
+    "coverage_node": "istanbul cover ./node_modules/.bin/_mocha tests/canvas.node.spec.js",
+    "phantomjs": "phantomjs"
   },
   "keywords": [
     "isomorphic",
