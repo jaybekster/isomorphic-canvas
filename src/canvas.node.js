@@ -63,10 +63,4 @@ FSImageProvider.prototype.getImage = function getImage(url, callback) {
   });
 };
 
-
-global.window = global.window || {};
-global.window.requestAnimationFrame = function (cb) {
-  cb();
-};
-
 module.exports = canvas;

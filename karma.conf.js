@@ -15,7 +15,7 @@ module.exports = function (config) {
     files: [
       'src/canvas.browser.js',
       {pattern: 'tests/1px.gif', watched: false, included: false, served: true},
-      'tests/**/*.spec.js'
+      'tests/canvas.spec.js'
     ],
 
     // list of files to exclude

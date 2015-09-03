@@ -5,7 +5,7 @@
   "main": "./src/canvas.node.js",
   "browser": "./src/canvas.browser.js",
   "peerDependencies": {
-    "canvas": "^1.2.8"
+    "canvas": "^1.0.0"
   },
   "devDependencies": {
     "istanbul": "^0.3.19",
@@ -24,8 +24,7 @@
     "test_chrome": "karma start --browsers Chrome --no-single-run",
     "test_node": "mocha tests/canvas.node.spec.js",
     "coverage_browser": "karma start --reporters dots,coverage",
-    "coverage_node": "istanbul cover ./node_modules/.bin/_mocha tests/canvas.node.spec.js",
-    "phantomjs": "phantomjs"
+    "coverage_node": "istanbul cover ./node_modules/.bin/_mocha tests/canvas.node.spec.js"
   },
   "keywords": [
     "isomorphic",
