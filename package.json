@@ -4,6 +4,8 @@
   "description": "Canvas API wrapper for isomorphic applications.",
   "main": "./src/canvas.node.js",
   "browser": "./src/canvas.browser.js",
+  "repository": "arusakov/isomorphic-canvas",
+  "bugs": "https://github.com/arusakov/isomorphic-canvas/issues",
   "peerDependencies": {
     "canvas": "^1.0.0"
   },
