@@ -1,3 +1,5 @@
+/* eslint-env browser, commonjs, amd */
+
 (function (root, factory) {
   /* istanbul ignore next */
   if (typeof exports === 'object') {
@@ -10,7 +12,7 @@
     // Global Variables
     root['isomorphic-canvas'] = factory();
   }
-}(this, function () {
+} (this, function () {
   /**
    *
    * @param {number} width - px
@@ -26,33 +28,20 @@
 
   /**
    *
-   * @param {String} url
+   * @param {String} url - or base64
    * @param {Function} callback
-   * @return {Image}
+   * @returns {Image}
    */
-  function createImg(url, callback) {
+  canvas.getImage = canvas.getImageSync = function getImage(url, callback) {
     var img = new Image();
     img.onload = function () {
-      callback(null, img);
+      callback(null, img); 
     };
     img.onerror = function () {
-      callback(new Error('Cannot load img ' + url));
+      callback(new Error('Cannot load img ' + url)); 
     };
     img.src = url;
     return img;
-  }
-
-  /**
-   *
-   * @param {String} url - or base64
-   * @param {Function} callback
-   */
-  canvas.getImage = function getImage(url, callback) {
-    createImg(url, callback);
-  };
-
-  canvas.getImageSync = function getImageSync(url, callback) {
-    return createImg(url, callback);
   };
 
   return canvas;

@@ -1,8 +1,15 @@
+/* eslint-env node, mocha */
+
+var should = require('should');
+
 var isoCanvas = require('..');
-var expect = require('chai').expect;
 
 describe('isomorphic canvas node', function () {
-  it('test', function () {
-    expect(1).to.equal(1);
+
+  it('exports', function () {
+    // expect(isoCanvas).toEqual(jasmine.any(Function));
+    // expect(isoCanvas.getImage).toEqual(jasmine.any(Function));
+    // expect(isoCanvas.getImageSync).toEqual(jasmine.any(Function));
   });
+
 });

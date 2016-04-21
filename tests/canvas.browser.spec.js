@@ -1,6 +1,9 @@
+/* eslint-env browser, jasmine */
+var GIF_URL = '/base/tests/1px.gif';
+var ERROR_URL = '/base/tests/fake.png';
+var isoCanvas = window['isomorphic-canvas'];
+
 describe('isomorphic canvas browser', function () {
-  var isoCanvas = window['isomorphic-canvas'];
-  var gifUrl = '/base/tests/1px.gif';
   var png3x2 = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAADklEQVQIW2NkQAKMyBwAAEEAAzqc1JUAAAAASUVORK5CYII=';
 
@@ -8,6 +11,7 @@ describe('isomorphic canvas browser', function () {
     expect(isoCanvas).toEqual(jasmine.any(Function));
     expect(isoCanvas.getImage).toEqual(jasmine.any(Function));
     expect(isoCanvas.getImageSync).toEqual(jasmine.any(Function));
+    expect(isoCanvas.getImage).toBe(isoCanvas.getImageSync);
   });
 
   it('canvas', function () {
@@ -19,20 +23,20 @@ describe('isomorphic canvas browser', function () {
   });
 
   it('image onload', function (done) {
-    isoCanvas.getImage(gifUrl, function (err, img) {
+    isoCanvas.getImage(GIF_URL, function (err, img) {
       expect(img).toEqual(jasmine.any(Image));
       expect(img.width).toBe(1);
       expect(img.height).toBe(1);
       done();
-    })
+    });
   });
 
   it('image onerror', function (done) {
-    isoCanvas.getImage('error.png', function (err) {
+    isoCanvas.getImage(ERROR_URL, function (err) {
       expect(err).toEqual(jasmine.any(Error));
-      expect(err.message).toBe('Cannot load img error.png');
+      expect(err.message).toMatch(/^Cannot load img [\S\s]*fake.png$/);
       done();
-    })
+    });
   });
 
   it('image sync base64', function (done) {

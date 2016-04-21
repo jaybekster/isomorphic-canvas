@@ -1,5 +1,4 @@
-// Karma configuration
-// Generated on Mon Aug 31 2015 13:03:36 GMT+0300 (MSK)
+/* eslint-env browser, commonjs */
 
 module.exports = function (config) {
   config.set({
@@ -15,7 +14,8 @@ module.exports = function (config) {
     files: [
       'src/canvas.browser.js',
       {pattern: 'tests/1px.gif', watched: false, included: false, served: true},
-      'tests/canvas.spec.js'
+      {pattern: 'tests/fake.png', watched: false, included: false, served: true},
+      'tests/canvas.browser.spec.js'
     ],
 
     // list of files to exclude
@@ -58,5 +58,5 @@ module.exports = function (config) {
       type: 'html',
       dir: 'coverage/'
     }
-  })
+  });
 };

@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 var fs = require('fs');
 var path = require('path');
 
@@ -9,10 +11,11 @@ var imageProvider = null;
  *
  * @param {number} width - px
  * @param {number} height - px
+ * @param {string} mode - 'pdf' or 'svg'
  * @return {HTMLCanvasElement}
  */
-function canvas(width, height) {
-  return new Canvas(width, height);
+function canvas(width, height, mode) {
+  return new Canvas(width, height, mode);
 }
 
 var base64Str = 'base64,';
