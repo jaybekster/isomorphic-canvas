@@ -1,6 +1,6 @@
 {
   "name": "isomorphic-canvas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Canvas API wrapper for isomorphic applications.",
   "main": "./src/canvas.node.js",
   "browser": "./src/canvas.browser.js",
