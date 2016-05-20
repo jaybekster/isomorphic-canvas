@@ -21,7 +21,7 @@
     "mocha": "2.4.5",
     "phantomjs-prebuilt": "2.1.7",
     "should": "8.3.1",
-    "webpack": "1.13.0"
+    "webpack": "1.13.1"
   },
   "scripts": {
     "coverage_browser": "karma start --reporters dots,coverage",
