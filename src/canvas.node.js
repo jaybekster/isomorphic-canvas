@@ -18,12 +18,18 @@ function canvas(width, height, mode) {
   return new Canvas(width, height, mode);
 }
 
-var base64Str = 'base64,';
-
-function createImg(buffer) {
+function createImgFromBuffer(buffer) {
   var img = new Image();
   img.src = buffer;
   return img;
+}
+
+var base64Str = 'base64,';
+
+function createImgFromBase64(url) {
+  var from = url.indexOf(base64Str) + base64Str.length;
+  var buf = new Buffer(url.substr(from), 'base64');
+  return createImgFromBuffer(buf);
 }
 
 /**
@@ -36,9 +42,7 @@ canvas.getImage = function getImage(url, callback) {
   var start = url.substr(0, 5);
   if (start === 'data:') {
     process.nextTick(function () {
-      var from = url.indexOf(base64Str) + base64Str.length;
-      var buffer = new Buffer(url.substr(from), 'base64');
-      callback(null, createImg(buffer));
+      callback(null, createImgFromBase64(url));
     });
   } else {
     imageProvider.getImage(url, callback);
@@ -61,7 +65,7 @@ FSImageProvider.prototype.getImage = function getImage(url, callback) {
       callback(err);
       return;
     }
-    var img = createImg(data);
+    var img = createImgFromBuffer(data);
     callback(null, img);
   });
 };

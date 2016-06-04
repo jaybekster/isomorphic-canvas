@@ -10,27 +10,28 @@
     "canvas": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "2.8.0",
+    "eslint": "2.11.0",
     "istanbul": "0.4.3",
     "jasmine-core": "2.4.1",
     "karma": "0.13.22",
-    "karma-chrome-launcher": "0.2.3",
-    "karma-coverage": "0.5.5",
-    "karma-jasmine": "0.3.8",
+    "karma-chrome-launcher": "1.0.1",
+    "karma-coverage": "1.0.0",
+    "karma-jasmine": "1.0.2",
     "karma-phantomjs-launcher": "1.0.0",
-    "mocha": "2.4.5",
+    "mocha": "2.5.3",
     "phantomjs-prebuilt": "2.1.7",
-    "should": "8.3.1",
-    "webpack": "1.13.0"
+    "should": "9.0.0",
+    "webpack": "1.13.1"
   },
   "scripts": {
-    "coverage_browser": "karma start --reporters dots,coverage",
+    "coverage": "karma start --reporters dots,coverage",
     "coverage_node": "istanbul cover ./node_modules/.bin/_mocha tests/canvas.node.spec.js",
-    "dev": "karma start --auto-watch --no-single-run & mocha --watch tests/canvas.node.spec.js",
+    "dev": "karma start --auto-watch --no-single-run",
+    "dev_node": "mocha --watch tests/canvas.node.spec.js",
     "lint": "eslint ./src ./tests ./karma.conf.js",
-    "test": "karma start",
+    "test": "karma start && mocha tests/*.node.spec.js",
     "test_chrome": "karma start --browsers Chrome --no-single-run",
-    "test_node": "mocha tests/canvas.node.spec.js"
+    "test_node": "mocha tests/*.node.spec.js"
   },
   "keywords": [
     "isomorphic",

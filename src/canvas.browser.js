@@ -32,7 +32,7 @@
    * @param {Function} callback
    * @returns {Image}
    */
-  canvas.getImage = canvas.getImageSync = function getImage(url, callback) {
+  canvas.getImage = function getImage(url, callback) {
     var img = new Image();
     img.onload = function () {
       callback(null, img); 

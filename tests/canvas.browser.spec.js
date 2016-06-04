@@ -5,13 +5,13 @@ var isoCanvas = window['isomorphic-canvas'];
 
 describe('isomorphic canvas browser', function () {
   var png3x2 = 'data:image/png;base64,' +
-    'iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAADklEQVQIW2NkQAKMyBwAAEEAAzqc1JUAAAAASUVORK5CYII=';
+    'iVBORw0KGgoAAAANSUhEUgAAAAMAAAACC' +
+    'AYAAACddGYaAAAADklEQVQIW2NkQAKMyB' +
+    'wAAEEAAzqc1JUAAAAASUVORK5CYII=';
 
   it('exports', function () {
     expect(isoCanvas).toEqual(jasmine.any(Function));
     expect(isoCanvas.getImage).toEqual(jasmine.any(Function));
-    expect(isoCanvas.getImageSync).toEqual(jasmine.any(Function));
-    expect(isoCanvas.getImage).toBe(isoCanvas.getImageSync);
   });
 
   it('canvas', function () {
