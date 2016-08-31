@@ -17,7 +17,7 @@
     "karma-chrome-launcher": "1.0.1",
     "karma-coverage": "1.0.0",
     "karma-jasmine": "1.0.2",
-    "karma-phantomjs-launcher": "1.0.0",
+    "karma-phantomjs-launcher": "1.0.2",
     "mocha": "2.5.3",
     "phantomjs-prebuilt": "2.1.7",
     "should": "9.0.0",
