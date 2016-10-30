@@ -7,7 +7,7 @@
   "repository": "arusakov/isomorphic-canvas",
   "bugs": "https://github.com/arusakov/isomorphic-canvas/issues",
   "peerDependencies": {
-    "canvas": "^1.0.0"
+    "canvas": "^1.6.2"
   },
   "devDependencies": {
     "eslint": "2.11.0",
