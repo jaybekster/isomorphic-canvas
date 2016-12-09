@@ -19,7 +19,7 @@
     "karma-jasmine": "1.0.2",
     "karma-phantomjs-launcher": "1.0.0",
     "mocha": "2.5.3",
-    "phantomjs-prebuilt": "2.1.7",
+    "phantomjs-prebuilt": "2.1.14",
     "should": "9.0.0",
     "webpack": "1.13.1"
   },
